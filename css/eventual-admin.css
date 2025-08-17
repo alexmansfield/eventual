@@ -1,0 +1,177 @@
+/**
+ * Eventual Plugin Admin CSS
+ * 
+ * This file contains the admin-specific styles for the Eventual WordPress plugin.
+ */
+
+/* Admin-specific container styles */
+.eventual-admin-container {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/* Admin-specific element styles */
+.eventual-admin-element {
+	display: inline-block;
+	padding: 8px 16px;
+	background-color: #2271b1;
+	color: #ffffff;
+	text-decoration: none;
+	border-radius: 3px;
+	transition: all 0.2s ease;
+	cursor: pointer;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-size: 13px;
+	line-height: 1.4;
+	border: 1px solid #2271b1;
+}
+
+.eventual-admin-element:hover {
+	background-color: #135e96;
+	color: #ffffff;
+	text-decoration: none;
+	border-color: #135e96;
+	transform: translateY(-1px);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.eventual-admin-element:active {
+	transform: translateY(0);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Admin plugin loaded state */
+.eventual-admin-loaded {
+	/* Add any admin body-level styles when plugin is loaded */
+}
+
+/* WordPress admin integration */
+.wp-admin .eventual-admin-element {
+	vertical-align: middle;
+}
+
+/* Admin notice styles */
+.eventual-admin-notice {
+	border-left: 4px solid #2271b1;
+	background: #fff;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+	margin: 5px 0 15px;
+	padding: 1px 12px;
+}
+
+.eventual-admin-notice.notice-success {
+	border-left-color: #00a32a;
+}
+
+.eventual-admin-notice.notice-warning {
+	border-left-color: #dba617;
+}
+
+.eventual-admin-notice.notice-error {
+	border-left-color: #d63638;
+}
+
+.eventual-admin-notice.notice-info {
+	border-left-color: #72aee6;
+}
+
+/* Admin form styles */
+.eventual-admin-form {
+	max-width: 600px;
+	margin: 20px 0;
+}
+
+.eventual-admin-form .form-table th {
+	width: 200px;
+	padding: 20px 10px 20px 0;
+}
+
+.eventual-admin-form .form-table td {
+	padding: 15px 10px;
+}
+
+.eventual-admin-form input[type="text"],
+.eventual-admin-form input[type="email"],
+.eventual-admin-form input[type="url"],
+.eventual-admin-form textarea,
+.eventual-admin-form select {
+	width: 100%;
+	max-width: 400px;
+}
+
+/* Admin button styles */
+.eventual-admin-button {
+	background: #2271b1;
+	border-color: #2271b1;
+	color: #fff;
+	text-decoration: none;
+	padding: 5px 10px;
+	border-radius: 3px;
+	border: 1px solid;
+	cursor: pointer;
+	font-size: 13px;
+	line-height: normal;
+	margin: 0 5px 0 0;
+}
+
+.eventual-admin-button:hover {
+	background: #135e96;
+	border-color: #135e96;
+	color: #fff;
+}
+
+.eventual-admin-button.button-secondary {
+	background: #f6f7f7;
+	border-color: #2271b1;
+	color: #2271b1;
+}
+
+.eventual-admin-button.button-secondary:hover {
+	background: #f0f0f1;
+	border-color: #135e96;
+	color: #135e96;
+}
+
+/* Admin table styles */
+.eventual-admin-table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 20px 0;
+}
+
+.eventual-admin-table th,
+.eventual-admin-table td {
+	padding: 8px 12px;
+	text-align: left;
+	border-bottom: 1px solid #c3c4c7;
+}
+
+.eventual-admin-table th {
+	background-color: #f6f7f7;
+	font-weight: 600;
+}
+
+/* Accessibility improvements */
+.eventual-admin-element:focus {
+	outline: 2px solid #2271b1;
+	outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+	.eventual-admin-element {
+		border: 2px solid currentColor;
+	}
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+	.eventual-admin-element {
+		transition: none;
+	}
+	
+	.eventual-admin-element:hover {
+		transform: none;
+	}
+} 

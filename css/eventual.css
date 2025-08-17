@@ -1,0 +1,150 @@
+/**
+ * Eventual Plugin CSS
+ * 
+ * This file contains the styles for the Eventual WordPress plugin.
+ */
+
+ .eventual-month {
+	--padding-inline: 1em;
+	--padding-block: 1em;
+	--calendar-lines: #f0f0f0;
+	--calendar-bg: #fff;
+	--calendar-bg-empty: #f9f9f9;
+	--calendar-text: #000;
+	--event-bg: #000;
+	--event-bg-hover: #444;
+	--event-text: #fff;
+	--border-radius: 12px;
+
+	background-color: var(--calendar-lines);
+	border: 1px solid var(--calendar-lines);
+	border-radius: var(--border-radius);
+	overflow: hidden;
+	margin-block: var(--padding-block);
+
+	:where(.eventual-month__header) {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		
+		background-color: var(--calendar-bg);
+		border-bottom: 1px solid var(--calendar-lines);
+
+		:where(.eventual-month__navigation-link) {
+			color: var(--calendar-text);
+			padding: 1em 1.5em;
+			display: block;
+			height: 100%;
+		}
+
+		:where(.eventual-month__navigation-link):hover {
+			background-color: var(--calendar-bg-empty);
+		}
+
+		:where(.eventual-month__navigation-link--previous) {
+			border-inline-end: 1px solid var(--calendar-lines);
+		}
+		:where(.eventual-month__navigation-link--next) {
+			border-inline-start: 1px solid var(--calendar-lines);
+		}
+	}
+
+	/**
+	 * Styles for day headings (mon, tue, wed, etc.)
+	 */
+	:where(.eventual-month__day-names ul) {
+		display: grid;
+		grid-template-columns: repeat(7, 1fr);
+		gap: 1px;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		font-size: var(--text-s);
+		text-transform: uppercase;
+		margin-bottom: 1px;
+	}
+
+	/**
+	 * Wrapper for the days and events grids.
+	 */
+	:where(.eventual-month__content) {
+		display: grid;
+		position: relative;
+	}
+	
+	/**
+	 * Forces days grid and events grid to overlap.
+	 */
+	:where(.eventual-month__days),
+	:where(.eventual-month__events) {
+		grid-area: 1 / 1;
+	}
+
+	.eventual-month__day-list,
+	.eventual-month__event-list {
+		/* aspect-ratio: 7 / 5; */
+		position: relative;
+		grid-template-rows: repeat(var(--rows, 6), 140px); /* Use CSS variable for rows, CSS value for height */
+		display: grid;
+		grid-template-columns: repeat(7, 1fr);
+		gap: 1px;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.eventual-month__day-names ul li,
+	.eventual-month__days ul li  {
+		background-color: var(--calendar-bg);
+		padding: var(--padding-block) var(--padding-inline);
+		text-align: center;
+		position: relative;
+	}
+
+	.eventual-month__event {
+		position: relative;
+		height: 2em;
+		margin: auto 0.5em 0.5em 0.5em;
+
+		font-size: 14px;
+		line-height: 2em;
+		text-align: center;
+		text-transform: uppercase;
+		
+		transition: margin-bottom 0.5s ease-in-out;
+	}
+	
+	.eventual-month__event--link-,
+	.eventual-month__event a {
+		background-color: var(--calendar-text);
+		border-radius: 100vw;
+		color: var(--calendar-bg);
+		padding-inline: 1em;
+	}
+
+	.eventual-month__event a {
+		display: block;
+		width: 100%;
+		height: 100%;
+		text-decoration: none;
+
+		&:hover {
+			background-color: var(--event-bg-hover);
+		}
+	}
+
+	.eventual-month__day {
+		position: relative;
+
+		time {
+			position: absolute;
+			top: var(--padding-block);
+			left: var(--padding-inline);
+		}
+
+		&.eventual-month__day--empty {
+			background-color: var(--calendar-bg-empty);
+		}
+	}
+ }
+
